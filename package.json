@@ -1,0 +1,14 @@
+{
+  "name": "create-node-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "create-node-lambda": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "William Cougan <william.cougan@gmail.com> (https://williamcougan.com/)",
+  "license": "MIT"
+}
