@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "0.1.0",
   "scripts": {
     "server": "open http://localhost:8080 && nodemon ./scripts/server.js",
     "event": "node ./scripts/event",
