@@ -9,6 +9,7 @@ async function build() {
 	await exec('cd build && npm install --production');
 	await exec('cp -r src/* build/');
 	await exec(`cd build && zip -r ./${name}.zip *`);
+	console.log(`${name}.zip created successfully.`);
 }
 
 build();
