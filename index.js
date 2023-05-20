@@ -2,12 +2,12 @@
 
 const fs = require('fs');
 const path = require('path');
-const readline = require('readline');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
 async function init(isRetry) {
-	const packageName = await getInput('Package name: ');
+	const args = process.argv.slice(2);
+	const packageName = args[0];
 	if (packageName) {
 		const sourceDir = path.join(__dirname, './template');
 		const targetDir = `./${packageName}`;
@@ -22,19 +22,6 @@ async function init(isRetry) {
 			init(true);
 		}
 	}
-}
-
-async function getInput(prompt) {
-	const rl = readline.createInterface({
-		input: process.stdin,
-		output: process.stdout,
-	});
-	return new Promise((resolve) => {
-		rl.question(prompt, (input) => {
-			rl.close();
-			resolve(input.trim());
-		});
-	});
 }
 
 function copyDir(sourceDir, destinationDir) {
