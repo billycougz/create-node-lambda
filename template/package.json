@@ -2,6 +2,7 @@
   "version": "1.0.0",
   "scripts": {
     "server": "open http://localhost:8080 && nodemon ./server.js",
+    "event": "node event",
     "build": "node build.js"
   },
   "devDependencies": {

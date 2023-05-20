@@ -4,11 +4,19 @@ This project was bootstrapped with [Create Node Lambda](https://github.com/billy
 
 ## Available Scripts
 
+### `npm run event`
+
+Simply runs your `Lambda` handler with a mock `event` object.
+
+Modify the `event` object within `event.js` to meet the specifications of any event.
+
 ### `npm run server`
 
-Runs your Lambda on a local Express server. The default configuration runs at http://localhost:8080.
+Runs your `Lambda` handler on a local `Express` server to simulate an `API Gateway` or `Function URL` event.
 
-Nodemon live reloads the server the when you make changes.
+- The `Express` request is transformed into an `API Gateway` event
+- The default configuration runs at http://localhost:8080
+- Nodemon live reloads the server the when you make changes
 
 ### `npm run build`
 
