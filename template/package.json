@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
   "scripts": {
-    "server": "open http://localhost:8080 && nodemon ./server.js",
-    "event": "node event",
-    "build": "node build.js"
+    "server": "open http://localhost:8080 && nodemon ./scripts/server.js",
+    "event": "node ./scripts/event",
+    "build": "node ./scripts/build.js"
   },
   "devDependencies": {
     "aws-sdk": "^2.1323.0",

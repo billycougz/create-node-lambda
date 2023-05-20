@@ -1,6 +1,6 @@
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
-const { name } = require('./package.json');
+const { name } = require('../package.json');
 
 async function build() {
 	await exec('rm -rf build');
