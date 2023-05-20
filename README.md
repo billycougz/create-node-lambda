@@ -22,3 +22,5 @@ npm run server
 ```
 
 The [template's README](https://github.com/billycougz/create-node-lambda/blob/main/template/README.md) provides additional usage details.
+
+See [issues](https://github.com/billycougz/create-node-lambda/issues) for enhancements, bugs, etc.
