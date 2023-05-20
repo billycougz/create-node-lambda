@@ -9,8 +9,9 @@ const exec = util.promisify(require('child_process').exec);
 async function init(isRetry) {
 	const packageName = await getInput('Package name: ');
 	if (packageName) {
+		const sourceDir = path.join(__dirname, './template');
 		const targetDir = `./${packageName}`;
-		copyDir('./template', targetDir);
+		copyDir(sourceDir, targetDir);
 		updatePackageName(packageName);
 		await runCmdAtPath('npm install', targetDir);
 		await runCmdAtPath('git init', targetDir);
@@ -48,7 +49,10 @@ function copyDir(sourceDir, destinationDir) {
 	// Loop through each file/directory in the source directory
 	for (const file of files) {
 		const sourcePath = path.join(sourceDir, file);
-		const destinationPath = path.join(destinationDir, file);
+
+		const dotConfigs = ['gitignore', 'env'];
+		const destinationFileName = dotConfigs.includes(file) ? `.${file}` : file;
+		const destinationPath = path.join(destinationDir, destinationFileName);
 
 		// Check if the file is a directory
 		if (fs.statSync(sourcePath).isDirectory()) {
